@@ -1,15 +1,19 @@
-let arr = [];
-const counter = arr.values;
+"use strict";
 
-startCounter();
+window.addEventListener("DOMContentLoaded", arrayCounter);
 
-function startCounter() {
+const arr = [];
+let counter = 0;
+
+function arrayCounter() {
+  arr.unshift(counter);
   counter++;
-  setTimeout();
-}
 
-function timeOut() {
-  arr = Array.from(counter).push(arr);
-  setTimeout(timeOut, 150);
-  console.log(counter);
+  if (counter > 9) {
+    arr.pop(arr);
+  }
+
+  setTimeout(arrayCounter, 1000);
+
+  console.log(arr);
 }
