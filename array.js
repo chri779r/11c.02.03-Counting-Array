@@ -1,4 +1,15 @@
-let arr = [0];
+let arr = [];
+const counter = arr.values;
 
-let resultArray;
-resultArray = arr.push(arr++);
+startCounter();
+
+function startCounter() {
+  counter++;
+  setTimeout();
+}
+
+function timeOut() {
+  arr = Array.from(counter).push(arr);
+  setTimeout(timeOut, 150);
+  console.log(counter);
+}
